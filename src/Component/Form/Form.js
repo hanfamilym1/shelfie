@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../Form/Form.css'
 
 class Form extends Component {
     constructor(props){
@@ -42,7 +43,7 @@ class Form extends Component {
         console.log(this.state.productinput)
         console.log(this.state.price)
         return(
-            <div className='form'>
+            <div className='formofproducts'>
                 <label htmlFor="">Image URL</label> <br/>
                 <input type="text" value={this.state.urlinput} onChange={(e=>this.handleUrlInput(e.target.value))}/> <br/>
                 <label htmlFor="">Product Name</label> <br/>
