@@ -9,6 +9,7 @@ const app=express()
 app.use(bodyParser.json())
 
 app.get('/api/inventory', ctrl.read)
+app.post('/api/product', ctrl.create)
 
 
 massive(process.env.CONNECTION_STRING).then(connection=>{

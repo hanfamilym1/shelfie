@@ -1,1 +1,1 @@
-select * from productsim
+select * from simproduct

@@ -1,7 +1,11 @@
 
 module.exports={
-    create: ()=>{
-
+    create: (req, res)=>{
+      const db = req.app.get('db')
+      const product = req.body
+      console.log('its working', product)
+      db.create_product().then(result=>
+      res.send(result))
     },
     read:  (req, res) => {
         const db = req.app.get('db')
