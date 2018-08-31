@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../Form/Form.css'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Form extends Component {
     constructor(props){
@@ -44,6 +45,7 @@ class Form extends Component {
         let {img, name, price} = this.state
         axios.post('/api/product',{img,name,price}).then(res=>
         res.data)
+        this.props.getInventory()
         this.resetButton()
     }
 
@@ -54,6 +56,9 @@ class Form extends Component {
         console.log(this.state.price)
         return(
             <div className='formofproducts'>
+
+             <Link to='/'>Dashboard</Link>
+            <Link to='/add'>Add Inventory</Link> <br/>
                 <label htmlFor="">Image URL</label> <br/>
                 <input type="text" value={this.state.img} onChange={(e=>this.handleimg(e.target.value))}/> <br/>
                 <label htmlFor="">Product Name</label> <br/>
@@ -62,7 +67,7 @@ class Form extends Component {
                 <input type="number" value={this.state.price} onChange={(e=>this.handlePrice(e.target.value))}/> <br/>
                 <button onClick={this.resetButton}>Cancel</button>
                 <button onClick={this.createProduct}>Add to Inventory</button>
-                {this.props.getInventory}
+                
 
             </div>
         )
