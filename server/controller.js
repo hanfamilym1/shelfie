@@ -6,7 +6,7 @@ module.exports={
     read:  (req, res) => {
         const db = req.app.get('db')
         // console.log(db)
-        db.getAllProducts().then(Products => {
+        db.get_inventory().then(Products => {
           res.send(Products)
         })
       },

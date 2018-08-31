@@ -8,7 +8,7 @@ const ctrl = require('./controller')
 const app=express()
 app.use(bodyParser.json())
 
-app.get('/', ctrl.read)
+app.get('/api/inventory', ctrl.read)
 
 
 massive(process.env.CONNECTION_STRING).then(connection=>{
