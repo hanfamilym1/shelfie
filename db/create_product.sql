@@ -1,3 +1,2 @@
 insert into simproduct (name, price, img)
-values (${name}, ${price}, ${img})
-returning *
+values ($1, $2, $3)

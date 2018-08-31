@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import '../Form/Form.css'
+import axios from 'axios'
 
 class Form extends Component {
     constructor(props){
@@ -11,6 +12,7 @@ class Form extends Component {
         }
         this.handleUrlInput = this.handleUrlInput.bind(this)
         this.resetButton = this.resetButton.bind(this)
+        // this.createProduct = this.createProduct.bind(this)
     }
 
     handleUrlInput(val){
@@ -37,6 +39,12 @@ class Form extends Component {
             price: 0
         })
     }
+
+    // createProduct(){
+    //     let {urlinput, productinput, price} = this.state
+    //     axios.post('/api/product',{urlinput,productinput,price}).then(res=>
+    //     console.log(res.data))
+    // }
 
     render(){
         console.log(this.state.urlinput)
